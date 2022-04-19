@@ -8,5 +8,8 @@ The data is collected from [Wikipedia](https://en.wikipedia.org/wiki/Opinion_pol
 
 [![image](https://user-images.githubusercontent.com/22492406/163935826-6ad15933-adf7-49f8-86c0-889161216047.png)](https://9ililq.csb.app/)
 
+[![image](https://user-images.githubusercontent.com/22492406/163941606-8cf84034-0de8-4fc1-aebc-109bb16f98d5.png)](https://9ililq.csb.app/)
+
+
 
 [![CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/9ililq?file=/src/App.tsx)
