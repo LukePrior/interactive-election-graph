@@ -6,4 +6,7 @@ The data is collected from [Wikipedia](https://en.wikipedia.org/wiki/Opinion_pol
 
 [![image](https://user-images.githubusercontent.com/22492406/163928534-93f4562b-d4e9-440e-9e6a-0cf909f6669b.png)](https://9ililq.csb.app/)
 
+[![image](https://user-images.githubusercontent.com/22492406/163935826-6ad15933-adf7-49f8-86c0-889161216047.png)](https://9ililq.csb.app/)
+
+
 [![CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/9ililq?file=/src/App.tsx)
