@@ -6,9 +6,9 @@ import { GeomSmooth } from "@graphique/geom-smooth";
 import moment from "moment";
 
 const dataUrl1 =
-  "https://www.wikitable2json.com/api/Opinion_polling_for_the_2022_Australian_federal_election?table=1&format=keyValue&lang=en&cleanRef=true";
+  "https://www.wikitable2json.com/api/Opinion_polling_for_the_2022_Australian_federal_election?table=1&format=keyValue&lang=en&cleanRef=true&keyRows=2";
 const dataUrl2 =
-  "https://www.wikitable2json.com/api/Opinion_polling_for_the_2022_Australian_federal_election?table=0&format=keyValue&lang=en&cleanRef=true";
+  "https://www.wikitable2json.com/api/Opinion_polling_for_the_2022_Australian_federal_election?table=0&format=keyValue&lang=en&cleanRef=true&keyRows=2";
 
 const graphTitle = (
   <div
@@ -37,7 +37,8 @@ function process_data(result) {
   var data;
   data = result;
   for (const poll of data) {
-    var percentage = parseFloat(poll["2pp vote"]);
+    var labor = parseFloat(poll["2pp vote ALP"]);
+    var liberal = parseFloat(poll["2pp vote L/NP"]);
 
     var brand = poll["Brand"];
 
@@ -47,10 +48,10 @@ function process_data(result) {
 
     var size = parseInt(poll["Sample size"]);
 
-    if (!isNaN(percentage) && brand != "" && date.isValid()) {
+    if (!isNaN(labor) && brand != "" && date.isValid()) {
       var temp = {};
       temp.party = "labor";
-      temp.vote = percentage;
+      temp.vote = labor;
       temp.brand = brand;
       temp.date = date.utc().valueOf();
       if (!isNaN(size)) {
@@ -59,7 +60,7 @@ function process_data(result) {
       formatted.push(temp);
       var temp = {};
       temp.party = "liberal";
-      temp.vote = 100 - percentage;
+      temp.vote = liberal;
       temp.brand = brand;
       temp.date = date.utc().valueOf();
       if (!isNaN(size)) {
@@ -95,7 +96,7 @@ function App() {
           x: (d) => new Date(d.date),
           y: (d) => d.vote,
           key: pollIdentifier,
-          fill: brandParty,
+          fill: (d) => d.party,
           label: brandParty
         }}
         margin={{
